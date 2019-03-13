@@ -1,0 +1,79 @@
+异常
+    语法错误
+    逻辑错误
+    
+    处理：
+        默认处理：停止错误，打印错误信息
+        try语句
+    事件通知
+    特殊情况处理
+        无法调整代码去处理
+    终止行为
+        try/finally
+    非常规控制流程
+         
+    检测异常：try
+        try-except：检查和处理  else
+        try-escept-finally
+          try：
+              try-suit
+          except exception,reason：一次捕获多个异常是要定义为元组，空escept语句用于捕获一切异常 
+              except_suite
+             
+        try-finally：检查及一些必要的清理工作，无论异常是否发生finally子句都会执行，常用于定义必要的清理工作，如关闭文件或断开服务器连接。
+          try：
+             try:
+                 try_suite
+             except
+             except
+             else
+          finally
+     自定义异常 raise（someesception，args，traceback）
+          raise exclass
+             assert condition，expression（手动触发异常）断言
+               -O选项
+               if __debug__:
+                   if not condition:
+                        raise assertionerror,expression
+     异常对象
+          BaseException
+          standarderror arithmaticerror，lookuperror，environmenterror
+          (assertianerror,attributeerror,floatingpointerror,ioerror,importerror,indentationerror,
+          indexerror,keyerror,keyboardinterrupt,memoryerror,nameerror,notimplementederror,
+          oserror,overflowerror,.....)
+          自定义异常类 多重继承
+
+
+执行环境
+     python [option][-c cmd|filename |-][args]
+     选项：
+          -h 获取帮助
+          -i 程序执行后进入交互式模式
+          -o， -oo 优化模式
+          -s  阻止将用户站点目录添加到sys.path
+          -S 阻止包含site初始化模式
+          -v 详细模式，排查问题
+          -c cmd  
+
+     环境变量:
+         PYTHONPATH,PYTHONHOME,PYTHONOPTIMIZE,PYTHONVERBASE
+     测试，调试，探查    
+         docstrings 文档字串 help（），__doc__
+         doctest模块
+           import test
+           import doctest
+           doctest.testmod(test)
+           doctest.testmod(test,verbose=true)
+         创建自测试模块
+           if __name__=='__main__':
+               import doctest
+               doctest.testmod()
+
+
+
+
+
+
+
+
+

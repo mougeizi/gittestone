@@ -1,0 +1,76 @@
+对象持久存储：pickle    marshal
+          
+                     DBM接口
+                     shelve模块
+#！/usr/bin/python3
+python函数创建：
+          全局函数：定义在模板中
+          局部函数：嵌套在其他函数中
+          lambda函数：表达式（灵活度高）
+          方法：与特定数据类型关联的函数
+          def functionname（parameters）
+          return 返回结果，可选，多个结果用逗号隔开
+         
+          作用域：本地（模块：全局，其范围只限于单个程序文件）
+          global修改全局变量
+          内置（全局（外层（本地））)
+          变量名解析：LEGB原则
+               函数闭合  （调用）
+               多态性      def f3(x,y):  print(x+y)
+              
+          参数传递    
+          参数匹配模型:
+               从左至右，关键字，默认，可变(*列表  **字典)，可变参数解包     
+
+          匿名函数lambda
+          lambda args：expression  直接返回函数
+          不能出现多条件语句
+
+      函数式编程：
+          filter（func，seq）过滤器 使filter返回为true的值
+          map（func，seq1（[，seq2]) 映射 将不同位置的同一位置元素整合成一个元组
+                                  map(None,l1,l2) 'NoneType' object is not callable
+                 reduce（func，seq[，init（初始值）]）折叠
+         
+          （迭代器）
+
+      闭包（lexical closure)：
+             def f1(x):（环境）
+                 def f2(y):
+                     return y**x
+                 return f2
+
+      列表解析，生成器   for i in(j**2 for j in range(1,11)):
+            yield生成一个生成器对象
+                 def gennum(x):
+                     y=0
+                     while y<=x:
+                         yield y
+                         y+=1                       
+      
+      装饰器：
+            其本身是一个函数，用于装饰其他函数，增强被装饰函数的功能
+            一般接受一个函数对象作为参数，以对其进行增强
+         
+      递归：
+           需要边界条件，递归前进段和返回段
+ 
+      函数的设计规范：
+            耦合性：
+                   尽可能通过参数接受输入，以及通过return产生输出以保证函数的独立性
+                   尽量减少使用函数变量进行函数间通信
+                   不要在函数中修改可变类型的参数
+                   避免直接修改定义在另外一个模块中的变量
+            聚合性：
+                   每个函数都应该有一个单一的，统一的目标
+                   每个函数的功能都应该相对简单
+      
+
+
+
+
+   
+
+
+
+          

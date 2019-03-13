@@ -1,0 +1,67 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+模块：
+    程序文件 （ 顶层文件，模块文件）  模块.py结尾
+    reload 重载 
+    导入 名称空间__dict__，dir()
+         import
+            import module as module_alias别名
+         from -import 指定模块的部分属性至当前名称空间
+            from module import name
+         （第一次导入）找到模块文件，编译成字节码，执行模块文件的代码
+    sys.path搜索路径
+          自我测试__name__='__main__'
+
+
+    包 将一组模块归并到一个目录中，此目录即为包     
+       必须有__init__.py,  
+    发布
+       压缩文件distutils
+       自动解包文件.exe
+       自包含的，不要求安装的预备运行
+       平台相关的安装程序
+       python eggs
+       将代码文件组织到模块容器中，准备一个readme或readme.txt文件，而后在容器中创建setup.py文件(from  distutils.core import setup)
+       setup.py中setup()可用参数
+           platform：平台列表
+           license：
+           py_modules:各模块名称组成的列表，这些模块可能位于包的根目录下（module），也可能位于子包目录中（subpkg1.module）
+           packages:各子包名称列表
+           大体分为两类：元数据信息（name，version）和包中的内容列表
+       打包 
+           python setup.py sdist
+           指定格式：zip,gztar(tar.gz),bztar(tar.bz),ztar(tar.z),tar
+           python setup.py bdist
+           指定格式：gztar(tar.gz),ztar(tar.z),tar，zip ，rpm（RPM package），pkgtool(solaris pkgtool),wininst(windows上自解压的zip格式的包），msi(microsoft installer)
+           bdist_msi......
+           获取帮助的方式：
+                python setup.py --help
+                python setup.py --help-command:所有可以使用的命令，如build，install
+                python setup.py command --help:获取特定命令的帮助
+                python setup.py command --help-formats:获取特定命令支持的格式
+            pip，esay_install
+       安装包
+            python setup.py install
+            build and install:
+            python setup build
+                --build-bases=/path/
+                lib,lib.platform 
+            第三方模块的安装路径：site-package
+            自定义安装路径：--user=，--prefix=，--exec-prefix=         
+            深度定制：--install-purelib=，--install-platlib=，--install-lib=，--install-script=
+            可执行文件安装路径：--install-data=，--install-headers=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

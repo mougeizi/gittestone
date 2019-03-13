@@ -1,0 +1,105 @@
+markdown:注释
+mendeley：文献管理工具
+github
+
+测试，试验小规模代码
+conda create -n py27 python=2.7   创建环境py27  conda包管理工具  网络不稳定情况下可能failed   删除 conda remove --name snake --all
+activate py27   进入py27
+pip install ipykernel  安装ipykernel
+python -m ipykernel install --name py27  在jupyter中安装py27
+
+清华镜像 国内源
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --setshow_channel_urls yes
+
+
+json与字典相似
+关闭py27环境  deactivate
+查看已有kernel jupter kernelspec list
+
+安装决策树可视化工具graphviz  需设置环境变量path
+
+
+工具
+import numpy as np
+科学计算的基础
+scipy  与科学计算相关
+pandas 借用数据结构
+sklearn 方便的工具，机器学习，调包方便
+keras.backend 深度学习，神经网
+tensorflow
+
+numpy矩阵计算
+np.dot()
+np.matmul()超过二维是有区别的
+
+安装tensorflow与keras
+conda info 查看版本信息
+环境--kenernel--工具
+ 安装指定版本的TensorFlow
+1.  首先在Anaconda的库中查找所有的相关的repository。
+ anaconda search -t conda tensorflow
+2. 根据自己的环境选择安装对应的版本，查看repository中的信息， anaconda会返回供安装的版本号以及安装方法
+anaconda show anaconda/tensorflow
+3.根据返回的内容进行安装
+conda install --channel https://conda.anaconda.org/anaconda tensorflow
+
+jupyter notebook 基本操作
+向上增加空白cell，A
+向下增加空白cell，B
+删除，DD
+剪切，X
+粘贴，v
+合并两个cell，A
+转为代码状态，Y
+转为markdown状态，M
+将选中的几个cell合并，shift+M
+打开/关闭行号，L
+恢复删除的最后一个cell，Z
+选中代码整体移动，ctrl+
+
+Markdown
+#标题
+**黑体**
+*斜体*
+* 列出一句话，不带序号
+带序号  1. 序号
+      2. 需要有空格
+      2. 与你输入的数字不相关 
+\转义符，latex中的特殊符号用一些特殊的文字组合去指代特殊的符号
+$\pi插入数学符号$
+[插入图片]3种方法
+**插入表格**
+|第一栏  |第二栏|第三栏|
+| ----------- |:------------|------|
+
+论坛：stackoverflow  知乎 csdn
+mendeley 文章管理工具
+  视频：万门  网易云课堂  coursera Udacty edx
+  教科书：周志华《机器学习》 《深度学习》lan Goodfellow
+         《python for data analysis》
+  论文 Hinton         
+
+github
+  版本控制 协同合作
+工作区 add 暂存区  commit 代码库
+git init建一个新的repository
+    clone 克隆一个新的repository
+    add   加入新的内容到缓存区
+    commit  实际提交改动
+    push  推送改动到远端
+    checkout -b 做一个分支
+    pull 获取并合并远端的版本
+
+mkdir newgame建一个新的文件夹
+cd newgame 进入
+git init 初始化
+dir /aos查看文件夹
+ls 查看目录
+git status 状态
+git add ./  把现有文件夹所有的改动提交到暂存区
+git commit -m 'first_commit'然后提交到代码区
+git remote add origin github链接（https://github.com/mougeizi/ty-newgame.git）  推送到远端地址
+

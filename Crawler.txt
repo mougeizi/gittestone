@@ -1,0 +1,111 @@
+网络爬虫（取得资料，分析）
+        机器学习(Machine Learning, ML)专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。它是人工智能的核心，是使计算机具有智能的根本途径。
+        HTML 是一种浏览器(Chrome, Safari, IE, Firefox等)看得懂的语言  CSS（装饰网页），JavaScript
+        tag:header body
+            header  存放网页的元信息
+            body 所看到的网页信息
+              <h1>（主标题）</h1> <title>(.+?)</title> ， <p>（段落）</p> <p>(.*?)</p>， <a>（链接）</a> href="(.*?)"
+        登录网页  decode('utf-8')显示中文
+        1、import requests
+           res = requests.get("https://s.1688.com/kq/-CCD4B1A6CDF8B1A3CEC2B1AD.html")
+           print (res.text) 
+        2、from urllib.request import urlopen
+           html=urlopen("https://morvanzhou.github.io/static/scraping/basic-structure.html").read().decode('utf-8')
+           print(html)
+        匹配网页内容  合理利用tag的名字
+       1、import re  (正则)
+          rea = re.findall(r"<title>(.+?)</title>", html)
+          print("\nPage title is: ", rea[0])
+          reb = re.findall(r"<p>(.*?)</p>", html, flags=re.DOTALL)    # re.DOTALL if multi line
+          print("\nPage paragraph is: ", reb[0])
+          rec = re.findall(r'href="(.*?)"', html)
+          print("\nAll links: ", rec)   
+       2、BeautifulSoup  lxml
+          soup=BeautifulSoup(html,features='lxml')
+          sub_urls=soup.find_all("a",{"target:_blank","href":re.compile("/item/(%.{2})+$")})
+          
+        CSS(class)
+
+问题：
+        python爬虫中有中文的url怎么解决：
+       1、 import urllib.parse
+           word='龙'
+           word=urllib.parse.quote(word)
+           url='https://baike.baidu.com/search/word?word=%s'%word
+           print(url)
+           url中的中文要单独处理，不能中英文全部合在一起处理（因为一部分的特殊字符也会被处理掉）。
+        2、from urllib import parse
+           url='www.xxx.com/?city={}'.format(parse.quote('上海'))
+
+        重定向：
+        1、先开启requests请求的回话：
+           s = requests.Session()
+        2、设置请求头部的用户代理：
+           s.headers['User-Agent'] = '用户代理编码' [编码可将请求url复制到浏览器,按f12打开开发者工具的NetWork查找请求信息]
+        3、请求数据
+           data= s.get(url)
+
+        中文乱码：
+        
+
+
+
+
+
+
+
+
+
+
+        原始码 转义
+        网页连接器
+        request 网络资源URLs截取套件 
+        beautifulsoup4  HTML剖析套件
+        
+        get postman
+        import requests
+        res = requests.get("https://s.1688.com/kq/-CCD4B1A6CDF8B1A3CEC2B1AD.html")
+        print (res.text)
+        
+        剖析DOM Tree(document object model)html
+        from bs4 import BeautifulSoup
+        text contents 
+        select  id（#title）class（.link)
+        infolite
+        
+
+  post 账号登录
+       搜索内容
+       上传图片
+       上传文件
+       往服务器传数据 等
+
+   get 正常打开网页
+       不往服务器传数据
+   webbrowser模块
+   param
+   cookies 就是用来衔接一个页面和另一个页面的关系
+   session
+   下载文件：urlretrieve       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
